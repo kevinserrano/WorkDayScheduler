@@ -1,0 +1,17 @@
+.row {
+    background-color: greenyellow;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+
+
+}
+
+.jumbotron {
+    font-family: fantasy;
+    text-align: center;
+}
+
+.col-sm-1 {
+    height: 100px;
+}
