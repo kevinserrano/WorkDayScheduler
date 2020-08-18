@@ -1,15 +1,13 @@
 // create variables
-var saveInfo = document.getElementById("saveButton");
-var input = document.getElementById("eventInput");
+var saveInfo = $("#saveButton");
+var input = $("#eventInput");
 
 
 
 
 
 //event listener for typing and saving boxes
-
-input.addEventListener("click", function () {
-
+$(input).on("click", function () {
 
 });
 
@@ -22,7 +20,7 @@ input.addEventListener("click", function () {
 
 
 
-saveInfo.addEventListener("click", function () {
+$(saveInfo).on("click", function () {
 
     localStorage.setItem("text", input)
 });
