@@ -3,34 +3,29 @@
     text-align: center;
 }
 
-
-
-.col-sm-1 {
-    height: 100px;
-}
-
 #time {
     width: 8%;
-    background-color: lightcoral;
-
-
-
+    text-align: center;
+    background-color: peachpuff;
 }
 
 #eventInput {
     width: 84%;
-    background-color: lightseagreen;
+    background-color: lightgray;
+    word-wrap: normal;
 
 }
 
 #saveButton {
     width: 8%;
+    background-color: lightskyblue;
 
 }
 
 #time,
 #eventInput,
 #saveButton {
+    border-radius: 5px;
     border-style: solid;
     border-color: black;
     border-width: 1px;

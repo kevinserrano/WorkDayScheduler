@@ -7,9 +7,7 @@ var input = $("#eventInput");
 
 
 //event listener for typing and saving boxes
-$(input).on("click", function () {
 
-});
 
 
 
