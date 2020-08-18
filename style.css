@@ -1,9 +1,5 @@
 .row {
     background-color: greenyellow;
-    border-style: solid;
-    border-color: black;
-    border-width: 1px;
-
 
 }
 
@@ -12,6 +8,32 @@
     text-align: center;
 }
 
+
+
 .col-sm-1 {
     height: 100px;
+}
+
+#time {
+    width: 8%;
+    background-color: lightcoral;
+
+
+}
+
+#eventInput {
+    width: 84%;
+    background-color: lightseagreen;
+}
+
+#saveButton {
+    width: 8%;
+}
+
+#time,
+#eventInput,
+#saveButton {
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
 }
