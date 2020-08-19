@@ -1,18 +1,18 @@
 $(document).ready(function () {
-
+    // list my variables needed
     var workHours = [9, 10, 11, 12, 1, 2, 3, 4, 5]
     var todaysDate = moment().format("dddd, MMMM Do, YYYY");
     var localTime = moment().format("H");
 
     console.log(localTime)
-
+    // applying date to html
     $("#currentDay").append(todaysDate)
 
 
 
-
+    //for loop 
     for (var i = 0; i < workHours.length; i++) {
-
+        // comparing time of day to decide on color changes
         if (workHours[i] / 12 > 1) {
 
             console.log(workHours[i]);
@@ -30,13 +30,13 @@ $(document).ready(function () {
 
 
 
-
+        // creating elements in html
         var newEl = $("<div>");
         var timeEl = $("<div>");
         var planEl = $("<textarea>");
         var saveButton = $("<button>");
         var iconEl = $("<i>");
-
+        // setting attributes and manipulating css
         newEl.attr("data-hour", workHours[i]);
         newEl.attr("class", "row");
 
@@ -45,7 +45,7 @@ $(document).ready(function () {
         saveButton.attr("class", "saveBtn col-1");
         iconEl.attr("class", "far fa-save");
 
-
+        // attaching elements to one another
         $(".container").append(newEl)
 
         newEl.append(timeEl)
@@ -55,6 +55,7 @@ $(document).ready(function () {
 
         timeEl.text(hour + timeDay)
     }
+    // adding the colors in which the calendar changes to when the hours pass
     if (workHours[i] == localTime) {
         planEl.attr("class", "description col 10 present")
     } else if (workHours[i] < localTime) {
