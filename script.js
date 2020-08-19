@@ -7,18 +7,22 @@ $(document).ready(function () {
         var timeEl = $("<div>");
         var planEl = $("<textarea>");
         var saveButton = $("<button>");
+        var iconEl = $("<i>");
 
         newEl.attr("data-hour", workHours[i]);
         newEl.attr("class", "row");
 
         planEl.attr("class", "description col 10");
         timeEl.attr("class", "hour col-1");
-        saveButton.attr("class", "savebtn col-1");
+        saveButton.attr("class", "saveBtn col-1");
+        iconEl.attr("class", "far fa-save");
 
         $(".container").append(newEl)
+
         newEl.append(timeEl)
         newEl.append(planEl)
         newEl.append(saveButton)
+        saveButton.append(iconEl)
 
         timeEl.text(workHours[i])
     }

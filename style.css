@@ -6,10 +6,9 @@ body {
 
 textarea {
     background: transparent;
-    border: none;
+    border: 1px solid black;
     resize: none;
     color: #000000;
-    border-left: 1px solid black;
     padding: 10px;
 }
 
@@ -59,7 +58,7 @@ textarea {
 }
 
 .saveBtn {
-    border-left: 1px solid black;
+    border: 1px solid black;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
     background-color: #06AED5;
