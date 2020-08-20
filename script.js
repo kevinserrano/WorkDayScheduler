@@ -38,17 +38,16 @@ $(document).ready(function () {
         var saveButton = $("<button>");
         var iconEl = $("<i>");
 
-        //getting local storage
-        var newInfo = localStorage.getItem("newInfo")
+
         // setting attributes and manipulating css
         newEl.attr("data-hour", workHours[i]);
-        newEl.attr("class", "row");
-
+        newEl.attr("class", "row")
         planEl.attr("class", "description col 10");
+        planEl.attr("id", "text" + [i]);
         timeEl.attr("class", "hour col-1");
         saveButton.attr("class", "saveBtn col-1");
+        saveButton.attr("id", [i]);
         iconEl.attr("class", "far fa-save");
-
 
 
         // attaching elements to one another
@@ -59,7 +58,11 @@ $(document).ready(function () {
         newEl.append(saveButton)
         saveButton.append(iconEl)
 
-        timeEl.text(hour + timeDay)
+        $("#text" + [i]).append(
+            localStorage.getItem("newInfo" + [i])
+        );
+
+        timeEl.text(hour + timeDay);
 
         // adding the colors in which the calendar changes to when the hours pass
         if (workHours[i] == localTime) {
@@ -69,12 +72,15 @@ $(document).ready(function () {
         } else {
             planEl.attr("class", "description col 10 future")
         }
-
-        $(saveButton).on("click", function () {
-
-
-            // setting local storage
-            localStorage.setItem("newInfo", newInfo);
-        })
     }
+    $(".saveBtn").on("click", function () {
+        var textKey = "newInfo" + this.id;
+        var textEl = "#text" + this.id;
+        console.log(this.id)
+        // setting local storage
+        console.log(textKey)
+        console.log(textEl)
+        localStorage.setItem(textKey, $(textEl).val());
+    })
+
 })
