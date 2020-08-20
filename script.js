@@ -37,6 +37,8 @@ $(document).ready(function () {
         var planEl = $("<textarea>");
         var saveButton = $("<button>");
         var iconEl = $("<i>");
+
+        //getting local storage
         var newInfo = localStorage.getItem("newInfo")
         // setting attributes and manipulating css
         newEl.attr("data-hour", workHours[i]);
@@ -71,7 +73,7 @@ $(document).ready(function () {
         $(saveButton).on("click", function () {
 
 
-
+            // setting local storage
             localStorage.setItem("newInfo", newInfo);
         })
     }
