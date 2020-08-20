@@ -3,7 +3,7 @@ $(document).ready(function () {
     var workHours = [9, 10, 11, 12, 13, 14, 15, 16, 17]
     var todaysDate = moment().format('MMMM Do YYYY');
     var localTime = moment().format('H');
-    var currentDate = Date();
+
 
     console.log(localTime)
     // applying date to html
@@ -37,6 +37,7 @@ $(document).ready(function () {
         var planEl = $("<textarea>");
         var saveButton = $("<button>");
         var iconEl = $("<i>");
+        var newInfo = localStorage.getItem("newInfo")
         // setting attributes and manipulating css
         newEl.attr("data-hour", workHours[i]);
         newEl.attr("class", "row");
@@ -45,6 +46,8 @@ $(document).ready(function () {
         timeEl.attr("class", "hour col-1");
         saveButton.attr("class", "saveBtn col-1");
         iconEl.attr("class", "far fa-save");
+
+
 
         // attaching elements to one another
         $(".container").append(newEl)
@@ -64,7 +67,12 @@ $(document).ready(function () {
         } else {
             planEl.attr("class", "description col 10 future")
         }
-    }
-    planEl
 
+        $(saveButton).on("click", function () {
+
+
+
+            localStorage.setItem("newInfo", newInfo);
+        })
+    }
 })
