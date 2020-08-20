@@ -1,8 +1,9 @@
 $(document).ready(function () {
     // list my variables needed
-    var workHours = [9, 10, 11, 12, 1, 2, 3, 4, 5]
-    var todaysDate = moment().format("dddd, MMMM Do, YYYY");
-    var localTime = moment().format("H");
+    var workHours = [9, 10, 11, 12, 13, 14, 15, 16, 17]
+    var todaysDate = moment().format('MMMM Do YYYY');
+    var localTime = moment().format('H');
+    var currentDate = Date();
 
     console.log(localTime)
     // applying date to html
@@ -54,15 +55,16 @@ $(document).ready(function () {
         saveButton.append(iconEl)
 
         timeEl.text(hour + timeDay)
-    }
-    // adding the colors in which the calendar changes to when the hours pass
-    if (workHours[i] == localTime) {
-        planEl.attr("class", "description col 10 present")
-    } else if (workHours[i] < localTime) {
-        planEl.attr("class", "description col 10 past")
-    } else {
-        planEl.attr("class", "description col 10 future")
-    }
 
+        // adding the colors in which the calendar changes to when the hours pass
+        if (workHours[i] == localTime) {
+            planEl.attr("class", "description col 10 present")
+        } else if (workHours[i] < localTime) {
+            planEl.attr("class", "description col 10 past")
+        } else {
+            planEl.attr("class", "description col 10 future")
+        }
+    }
+    planEl
 
 })
